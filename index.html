@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var titoe = document.createElement('div');
+        var currentPlayer = "X";
+        titoe.style.display ="block";
+        titoe.style.margin ="200px 500px 500px 370px";
+        titoe.style.padding ="50px 50px 50px 50px";
+        titoe.style.width="300px";
+        titoe.style.height="300px";
+        titoe.style.display="flex";
+        titoe.style.flexWrap="wrap";
+        
+    
+
+        
+        titoe.style.border = "2px solid green";
+       
+        for(let i=1; i<=9; i++){
+            var squ = document.createElement('div');
+            squ.style.height ="100px";
+            squ.style.width = "32%";
+            squ.style.border ="1px  solid yellow";  
+            squ.setAttribute("id",i);
+            squ.addEventListener('click',function(){
+                if(this.innerText.length == 0){
+                if(currentPlayer == "X"){
+                    this.innerText=currentPlayer;
+                    currentPlayer="O";
+
+            }
+            else{
+                this.innerText=currentPlayer;
+                currentPlayer="X";
+
+            }
+            }
+            })
+            titoe.appendChild(squ);
+        }
+        document.body.appendChild(titoe);
+    </script>
+</body>
+</html>
